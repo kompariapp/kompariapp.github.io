@@ -2,175 +2,916 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Kompari</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Kompari Privacy Policy: learn how comparison data stays on your device, how Google AdMob may process advertising data, and how to manage your privacy choices.">
+    <meta name="theme-color" content="#467805" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#14200b" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+    <title>Privacy Policy | Kompari</title>
+    <!--Hi! Thank you for using Kompari! :)-->
     <style>
         :root {
-            --brand-dark-green: #467805;
-            --brand-light-green: #CBEBA0;
-            --bg-color: #F4F6F8;
-            --card-bg: #ffffff;
-            --text-main: #333333;
-            --text-muted: #666666;
+            --brand: #467805;
+            --brand-strong: #345b03;
+            --brand-soft: #cbea9f;
+            --brand-wash: #eff8e3;
+            --background: #f4f6f8;
+            --surface: #ffffff;
+            --surface-muted: #f8fafb;
+            --text: #20251e;
+            --text-muted: #60685d;
+            --border: #dfe5dc;
+            --shadow: 0 18px 50px rgba(29, 45, 20, 0.09);
+            --focus: #74a92e;
+            --radius-xl: 10px;
+            --radius-lg: 10px;
+            --radius-md: 10px;
+            --content-width: 1160px;
+            --reading-width: 760px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --brand: #cbea9f;
+                --brand-strong: #ddf3bf;
+                --brand-soft: #44631e;
+                --brand-wash: #1e2c12;
+                --background: #10140d;
+                --surface: #181d15;
+                --surface-muted: #20261c;
+                --text: #edf2e9;
+                --text-muted: #b9c2b3;
+                --border: #343d2e;
+                --shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+                --focus: #cbea9f;
+            }
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 1.5rem;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.5;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 40px 20px;
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        h1 {
-            color: var(--brand-dark-green);
-            font-weight: 700;
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-            text-align: center;
-        }
-
-        .last-updated {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            color: var(--brand-dark-green);
-            font-weight: 600;
-            font-size: 1.4rem;
-            margin-top: 30px;
-            border-bottom: 2px solid var(--brand-light-green);
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-
-        h3 {
-            color: var(--brand-dark-green);
-            font-weight: 500;
-            font-size: 1.15rem;
-            margin-top: 10px;
-            border-bottom: 2px solid var(--brand-light-green);
-            padding-bottom: 2px;
-            display: inline-block;
-        }
-
-        p, li {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-top: 5px;
-            text-align: justify;
-        }
-
-        ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 8px;
+            min-width: 320px;
+            background:
+                radial-gradient(circle at 15% 0%, rgba(126, 170, 67, 0.12), transparent 30rem),
+                var(--background);
+            color: var(--text);
+            font-family: Poppins, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.72;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
-            color: var(--brand-dark-green);
-            text-decoration: none;
-            font-weight: 600;
+            color: var(--brand-strong);
+            font-weight: 650;
+            text-decoration-thickness: 0.08em;
+            text-underline-offset: 0.18em;
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration-thickness: 0.13em;
         }
 
-        .footer {
-            margin-top: 50px;
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--focus);
+            outline-offset: 4px;
+            border-radius: 10px;
+        }
+
+        .page-shell {
+            width: min(calc(100% - 2rem), var(--content-width));
+            margin: 0 auto;
+            padding: clamp(1rem, 3vw, 2.5rem) 0 3rem;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(1.5rem, 5vw, 3.5rem);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, var(--surface) 0%, var(--brand-wash) 100%);
+            box-shadow: var(--shadow);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -7rem;
+            bottom: -9rem;
+            width: 22rem;
+            height: 22rem;
+            border: 4rem solid color-mix(in srgb, var(--brand-soft) 26%, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .brand-lockup {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 68px;
+            margin-bottom: 1rem;
+        }
+
+        .brand-lockup img {
+            display: block;
+            width: auto;
+            max-width: min(260px, 70vw);
+            max-height: 72px;
+            object-fit: contain;
+        }
+
+        .brand-fallback {
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--brand-strong);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .brand-fallback-mark {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--brand-strong);
+            color: var(--surface);
+            font-size: 1.55rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text);
+            line-height: 1.22;
+            text-wrap: balance;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: clamp(2.15rem, 7vw, 4.2rem);
+            letter-spacing: -0.055em;
             text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            border-top: 1px solid #eeeeee;
-            padding-top: 20px;
         }
 
-        /* Mobile responsiveness */
-        @media (max-width: 600px) {
-            .container {
-                margin: 20px 10px;
-                padding: 25px;
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 1rem auto 0;
+            color: var(--text-muted);
+            font-size: clamp(1rem, 2.2vw, 1.15rem);
+            text-align: center;
+        }
+
+        .metadata {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 1rem;
+            margin-top: 1.35rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .metadata span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 250px minmax(0, 1fr);
+            gap: 1.5rem;
+            align-items: start;
+            margin-top: 1.5rem;
+        }
+
+        .toc {
+            position: sticky;
+            top: 1.25rem;
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            background: color-mix(in srgb, var(--surface) 94%, transparent);
+            box-shadow: 0 8px 26px rgba(29, 45, 20, 0.045);
+            backdrop-filter: blur(14px);
+        }
+
+        .toc h2 {
+            margin: 0 0 0.75rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .toc ol {
+            display: grid;
+            gap: 0.12rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc li {
+            counter-increment: toc;
+        }
+
+        .toc a {
+            display: grid;
+            grid-template-columns: 1.6rem 1fr;
+            gap: 0.25rem;
+            padding: 0.48rem 0.45rem;
+            border-radius: 10px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            font-weight: 580;
+            line-height: 1.35;
+            text-decoration: none;
+        }
+
+        .toc a::before {
+            content: counter(toc, decimal-leading-zero);
+            color: var(--brand);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .toc a:hover {
+            background: var(--brand-wash);
+            color: var(--brand-strong);
+        }
+
+        article {
+            min-width: 0;
+            padding: clamp(1.25rem, 4vw, 3rem);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        article > * {
+            max-width: var(--reading-width);
+            margin-inline: auto;
+        }
+
+        .summary-card {
+            max-width: none;
+            margin-bottom: 2.75rem;
+            padding: clamp(1.1rem, 3vw, 1.5rem);
+            border: 1px solid var(--border);
+            border-color: color-mix(in srgb, var(--brand) 30%, var(--border));
+            border-radius: var(--radius-lg);
+            background: var(--brand-wash);
+        }
+
+        .summary-card h2 {
+            margin: 0 0 0.9rem;
+            color: var(--brand-strong);
+            font-size: 1.2rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .summary-grid li {
+            position: relative;
+            margin: 0;
+            padding-left: 1.55rem;
+            color: var(--text);
+        }
+
+        .summary-grid li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--brand-strong);
+            font-weight: 900;
+        }
+
+        section {
+            padding-top: 0.35rem;
+        }
+
+        section + section {
+            margin-top: 2.65rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        article h2 {
+            margin: 0 0 1rem;
+            font-size: clamp(1.45rem, 3vw, 1.8rem);
+            letter-spacing: -0.025em;
+        }
+
+        article h2 .section-number {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--brand);
+            font-size: 0.74rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        article h3 {
+            margin: 1.8rem 0 0.6rem;
+            font-size: 1.12rem;
+        }
+
+        p {
+            margin: 0.8rem 0;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        ul,
+        ol {
+            color: var(--text-muted);
+        }
+
+        article li + li {
+            margin-top: 0.55rem;
+        }
+
+        strong {
+            color: var(--text);
+            font-weight: 750;
+        }
+
+        .data-table-wrap {
+            max-width: none;
+            margin-block: 1.25rem;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface);
+            font-size: 0.93rem;
+        }
+
+        th,
+        td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: var(--surface-muted);
+            color: var(--text);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .note {
+            margin-block: 1.25rem;
+            padding: 1rem 1.1rem;
+            border-left: 4px solid var(--brand);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            background: var(--surface-muted);
+            color: var(--text-muted);
+        }
+
+        .link-list {
+            display: grid;
+            gap: 0.65rem;
+            margin: 1rem 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .link-list a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.78rem 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface-muted);
+            text-decoration: none;
+        }
+
+        .link-list a::after {
+            content: "↗";
+            flex: 0 0 auto;
+        }
+
+        address {
+            margin-top: 1rem;
+            padding: 1rem 1.1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface-muted);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+
+        .page-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.75rem 1rem;
+            padding: 1.5rem 0.35rem 0;
+            color: var(--text-muted);
+            font-size: 0.86rem;
+        }
+
+        .back-to-top {
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                grid-template-columns: 1fr;
             }
-            h1 {
-                font-size: 1.8rem;
+
+            .toc {
+                position: static;
+            }
+
+            .toc ol {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-shell {
+                width: min(calc(100% - 1rem), var(--content-width));
+                padding-top: 0.5rem;
+            }
+
+            .hero,
+            article {
+                border-radius: var(--radius-lg);
+            }
+
+            .hero {
+                padding: 1.5rem 1.1rem 1.75rem;
+            }
+
+            .layout {
+                gap: 0.75rem;
+                margin-top: 0.75rem;
+            }
+
+            .toc {
+                padding: 1rem;
+            }
+
+            .toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            article {
+                padding: 1.25rem 1rem 1.75rem;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            th,
+            td {
+                min-width: 145px;
+                padding: 0.8rem;
+            }
+
+            .page-footer {
+                padding-inline: 0.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media print {
+            :root {
+                --background: #ffffff;
+                --surface: #ffffff;
+                --surface-muted: #ffffff;
+                --text: #000000;
+                --text-muted: #333333;
+                --border: #cccccc;
+            }
+
+            body {
+                background: #ffffff;
+                font-size: 11pt;
+            }
+
+            .page-shell {
+                width: 100%;
+                padding: 0;
+            }
+
+            .hero,
+            article,
+            .toc {
+                border: 0;
+                box-shadow: none;
+            }
+
+            .hero {
+                padding: 0 0 1.5rem;
+            }
+
+            .hero::after,
+            .toc,
+            .back-to-top {
+                display: none;
+            }
+
+            .layout {
+                display: block;
+                margin: 0;
+            }
+
+            article {
+                padding: 0;
+            }
+
+            section {
+                break-inside: avoid;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
             }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
-<div class="container">
-        <div style="text-align: center; margin-bottom: 20px;">
-            <img src="logo.png" alt="Kompari Logo" style="max-height: 80px; width: auto;">
+    <div class="page-shell">
+        <header class="hero" aria-labelledby="page-title">
+            <div class="brand-lockup">
+                <img
+                    src="logo.png"
+                    alt="Kompari"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                >
+                <div class="brand-fallback" aria-hidden="true">
+                    <span class="brand-fallback-mark">K</span>
+                    <span>Kompari</span>
+                </div>
+            </div>
+
+            <h1 id="page-title">Privacy Policy</h1>
+            <p class="hero-copy">
+                Kompari works without an account and keeps your product comparisons on your device.
+                Advertising is provided through Google AdMob, which may process limited device and advertising data.
+            </p>
+            <div class="metadata" aria-label="Policy information">
+                <span><strong>Effective:</strong> June 7, 2026</span>
+                <span><strong>Last updated:</strong> June 7, 2026</span>
+            </div>
+        </header>
+
+        <div class="layout">
+            <nav class="toc" aria-label="Privacy policy contents">
+                <h2>On this page</h2>
+                <ol>
+                    <li><a href="#scope">Scope</a></li>
+                    <li><a href="#data-we-handle">Data Kompari handles</a></li>
+                    <li><a href="#advertising">Advertising services</a></li>
+                    <li><a href="#choices">Privacy choices</a></li>
+                    <li><a href="#rights">Regional rights</a></li>
+                    <li><a href="#retention">Retention and deletion</a></li>
+                    <li><a href="#permissions">Device permissions</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#children">Children's privacy</a></li>
+                    <li><a href="#transfers">International processing</a></li>
+                    <li><a href="#changes">Policy changes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ol>
+            </nav>
+
+            <main id="policy-content">
+                <article>
+                    <aside class="summary-card" aria-labelledby="summary-title">
+                        <h2 id="summary-title">The essentials</h2>
+                        <ul class="summary-grid">
+                            <li>No account, login, or profile is required.</li>
+                            <li>Prices and quantities are processed locally.</li>
+                            <li>Kompari does not operate a server that receives your comparisons.</li>
+                            <li>Google AdMob may process data to provide and measure ads.</li>
+                            <li>Consent and privacy options are available where required.</li>
+                            <li>You can contact us directly about this policy.</li>
+                        </ul>
+                    </aside>
+
+                    <section id="scope" aria-labelledby="scope-title">
+                        <h2 id="scope-title"><span class="section-number">Section 01</span>Scope and who we are</h2>
+                        <p>
+                            This Privacy Policy explains how the <strong>Kompari Android application</strong> (the “App”)
+                            handles information when you use it. In this policy, “Kompari,” “we,” “us,” and “our” refer
+                            to the independent developer and publisher of the App.
+                        </p>
+                        <p>
+                            This policy applies to the App and to messages you send us for support. It does not govern
+                            third-party websites, services, advertisements, or apps that you may open from Kompari.
+                            Those services are governed by their own terms and privacy policies.
+                        </p>
+                    </section>
+
+                    <section id="data-we-handle" aria-labelledby="data-title">
+                        <h2 id="data-title"><span class="section-number">Section 02</span>Information Kompari handles directly</h2>
+                        <p>
+                            Kompari is designed to work without registration. We do not ask you to provide a name,
+                            phone number, account password, payment information, or user profile to use the App’s core
+                            comparison features.
+                        </p>
+
+                        <div class="data-table-wrap" role="region" aria-label="Kompari data handling table" tabindex="0">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Information</th>
+                                        <th scope="col">How it is used</th>
+                                        <th scope="col">Where it is handled</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Product names, quantities, prices, and selected units</td>
+                                        <td>To calculate and display price comparisons</td>
+                                        <td>Locally on your device; not sent to a Kompari-operated server</td>
+                                    </tr>
+                                    <tr>
+                                        <td>App preferences</td>
+                                        <td>To remember settings such as language, currency, theme, category, unit, tutorial status, and confirmation preferences</td>
+                                        <td>Stored locally by the App on your device</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support communications</td>
+                                        <td>To read, respond to, and resolve questions you voluntarily email to us</td>
+                                        <td>Handled through our email provider and retained as reasonably needed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="note">
+                            <strong>Important distinction:</strong> Kompari does not independently upload your comparison
+                            entries to its own servers. However, the third-party advertising SDK described below may
+                            transmit advertising and device-related information to Google and participating ad partners.
+                        </p>
+                    </section>
+
+                    <section id="advertising" aria-labelledby="advertising-title">
+                        <h2 id="advertising-title"><span class="section-number">Section 03</span>Google AdMob and advertising data</h2>
+                        <p>
+                            Kompari uses <strong>Google AdMob</strong> to display ads that support the App, since it is free. We also use Google’s <strong>User Messaging Platform (UMP)</strong> to request and manage
+                            privacy choices where required.
+                        </p>
+                        <p>
+                            Depending on your region, device settings, consent choices, Google’s configuration, and the
+                            ad that is served, Google and its advertising partners may process information such as:
+                        </p>
+                        <ul>
+                            <li>IP address and approximate location inferred from the IP address;</li>
+                            <li>device and app information, such as device model, operating system, app identifier, language, and screen characteristics;</li>
+                            <li>advertising identifiers, including the Android Advertising ID when available;</li>
+                            <li>ad impressions, clicks, interactions, and other ad-performance information;</li>
+                            <li>diagnostic, anti-fraud, security, and abuse-prevention information; and</li>
+                            <li>consent choices and related privacy signals.</li>
+                        </ul>
+                        <p>
+                            This information may be used to provide ads, limit how often an ad is shown, personalize ads
+                            when permitted, measure advertising performance, generate reports, and prevent fraud and abuse.
+                            Even when ads are not personalized, some processing may still be necessary to provide basic ads,
+                            measure delivery, maintain security, and comply with legal obligations.
+                        </p>
+
+                        <h3>Google and advertising-partner information</h3>
+                        <ul class="link-list">
+                            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                            <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from partner apps</a></li>
+                            <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google advertising technologies</a></li>
+                            <li><a href="https://support.google.com/admob/answer/9012903" target="_blank" rel="noopener noreferrer">Google AdMob ad technology providers</a></li>
+                        </ul>
+                    </section>
+
+                    <section id="choices" aria-labelledby="choices-title">
+                        <h2 id="choices-title"><span class="section-number">Section 04</span>Your advertising and privacy choices</h2>
+
+                        <h3>Consent message and Privacy Options</h3>
+                        <p>
+                            In regions where a privacy message is required, Kompari uses Google UMP to present available
+                            choices before requesting ads. When Google indicates that a privacy-options entry point is
+                            required, you can reopen it from <strong>Kompari → About → Privacy Options</strong> to review or
+                            change your choices.
+                        </p>
+
+                        <h3>Android and Google controls</h3>
+                        <p>
+                            You may also manage advertising settings through Android or your Google account. Available
+                            controls vary by device, Android version, account status, and region.
+                        </p>
+                        <ul class="link-list">
+                            <li><a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">Google My Ad Center</a></li>
+                            <li><a href="https://myaccount.google.com/privacycheckup" target="_blank" rel="noopener noreferrer">Google Privacy Checkup</a></li>
+                        </ul>
+                        <p>
+                            Resetting or deleting an advertising identifier, disabling ad personalization, or declining
+                            consent does not necessarily remove all advertising. It generally changes how ads are selected
+                            and how certain data may be used.
+                        </p>
+                    </section>
+
+                    <section id="rights" aria-labelledby="rights-title">
+                        <h2 id="rights-title"><span class="section-number">Section 05</span>Privacy rights by region</h2>
+                        <p>
+                            Privacy rights differ by country and state. Depending on where you live and whether a law
+                            applies to the relevant processing, you may have rights to request access, correction, deletion,
+                            restriction, portability, objection, or withdrawal of consent, and to lodge a complaint with a
+                            data-protection authority.
+                        </p>
+
+                        <h3>EEA, United Kingdom, and Switzerland</h3>
+                        <p>
+                            Google’s consent message may request permission for storing or accessing information on your
+                            device and for collecting, sharing, and using personal data for advertising purposes. You may
+                            withdraw or update applicable choices through the App’s Privacy Options entry point when it is
+                            available. Withdrawing consent does not affect processing that occurred before withdrawal.
+                        </p>
+
+                        <h3>California and other U.S. states</h3>
+                        <p>
+                            Kompari does not sell personal information for money. Some privacy laws may define certain
+                            disclosures for cross-context behavioral advertising as “sharing” or “targeted advertising.”
+                            To the extent those laws apply, you may use the App’s Privacy Options entry point, Google’s ad
+                            controls, or contact us to ask about available choices. We will not discriminate against you for
+                            exercising an applicable privacy right.
+                        </p>
+
+                        <h3>Requests concerning Google-held data</h3>
+                        <p>
+                            We generally cannot access or delete information held independently by Google or another ad
+                            technology provider. Requests relating to those providers should be submitted using their own
+                            privacy controls or contact channels. You may still email us, and we will explain what options
+                            are reasonably available for Kompari.
+                        </p>
+                    </section>
+
+                    <section id="retention" aria-labelledby="retention-title">
+                        <h2 id="retention-title"><span class="section-number">Section 06</span>Data retention and deletion</h2>
+                        <ul>
+                            <li><strong>Comparison entries:</strong> processed on your device and not stored on a Kompari-operated server.</li>
+                            <li><strong>Local preferences:</strong> remain on your device until changed, cleared through Android’s app settings, or removed with the App, subject to Android backup and restore behavior.</li>
+                            <li><strong>Support emails:</strong> retained only as reasonably necessary to answer your request, maintain support records, protect against abuse, or meet legal obligations.</li>
+                            <li><strong>Advertising data:</strong> retained according to Google’s and applicable ad partners’ own retention policies.</li>
+                        </ul>
+                        <p>
+                            You can clear Kompari’s locally stored settings from Android’s app-information screen by using
+                            the storage/data controls. Doing so may reset App preferences.
+                        </p>
+                    </section>
+
+                    <section id="permissions" aria-labelledby="permissions-title">
+                        <h2 id="permissions-title"><span class="section-number">Section 07</span>Device access and permissions</h2>
+                        <p>
+                            Kompari uses internet access to load advertisements and privacy messages. The App does not ask
+                            for runtime access to your camera, contacts, precise location, microphone, photos, videos, or
+                            general device storage for its core comparison functionality.
+                        </p>
+                        <p>
+                            Android, Google Play services, and embedded SDKs may use standard system capabilities that do
+                            not appear as runtime permission prompts. The permissions and SDKs included in each published
+                            version are also reflected in the App’s Google Play listing and Data safety section.
+                        </p>
+                    </section>
+
+                    <section id="security" aria-labelledby="security-title">
+                        <h2 id="security-title"><span class="section-number">Section 08</span>Security</h2>
+                        <p>
+                            We minimize the information Kompari handles directly and avoid operating a backend for product
+                            comparisons. This reduces, but does not eliminate, privacy and security risk. No device,
+                            transmission method, or third-party service can be guaranteed to be completely secure.
+                        </p>
+                        <p>
+                            You are responsible for maintaining appropriate security on your device, including using a
+                            supported Android version, installing security updates, and controlling physical access to the
+                            device.
+                        </p>
+                    </section>
+
+                    <section id="children" aria-labelledby="children-title">
+                        <h2 id="children-title"><span class="section-number">Section 09</span>Children’s privacy</h2>
+                        <p>
+                            Kompari is a general-audience utility and is not directed to children under 13 or to children
+                            below the minimum age required to consent to data processing in their jurisdiction. We do not
+                            knowingly request names, contact details, or accounts from children.
+                        </p>
+                        <p>
+                            If you believe a child has sent personal information to us through a support email, contact us
+                            so we can review and delete it where appropriate. Google and its advertising partners maintain
+                            their own policies and controls relating to children and age-restricted users.
+                        </p>
+                    </section>
+
+                    <section id="transfers" aria-labelledby="transfers-title">
+                        <h2 id="transfers-title"><span class="section-number">Section 10</span>International data processing</h2>
+                        <p>
+                            Google and advertising partners may process information in countries other than the country
+                            where you live. Those countries may have different data-protection laws. Information about
+                            Google’s safeguards and processing locations is available in Google’s privacy documentation.
+                        </p>
+                    </section>
+
+                    <section id="changes" aria-labelledby="changes-title">
+                        <h2 id="changes-title"><span class="section-number">Section 11</span>Changes to this policy</h2>
+                        <p>
+                            We may update this Privacy Policy to reflect changes to Kompari, third-party services, legal
+                            requirements, or our privacy practices. The effective and last-updated dates at the top of this
+                            page will be revised when the policy changes materially.
+                        </p>
+                        <p>
+                            When appropriate, we may also provide notice through the App or its store listing. We encourage
+                            you to review this page periodically.
+                        </p>
+                    </section>
+
+                    <section id="contact" aria-labelledby="contact-title">
+                        <h2 id="contact-title"><span class="section-number">Section 12</span>Contact us</h2>
+                        <p>
+                            Questions, privacy requests, and concerns about this policy can be sent to:
+                        </p>
+                        <address>
+                            <strong>Kompari Privacy Contact</strong><br>
+                            Email: <a href="mailto:kompariapp@gmail.com?subject=Kompari%20Privacy%20Request">kompariapp@gmail.com</a>
+                        </address>
+                        <p>
+                            To help us respond, describe your request and the country or state whose privacy law you believe
+                            applies. Please do not send sensitive information that is unnecessary for us to understand your
+                            request.
+                        </p>
+                        <p style="margin-bottom: 0px" >Thank you for using Kompari!</p>
+                    </section>
+                </article>
+            </main>
         </div>
-        
-        <h1>Privacy Policy</h1>
-        <div class="last-updated">Last updated: June 2026</div>
 
-        <p>Thank you for choosing to be part of our community by downloading <strong>Kompari</strong> ("App"). We are committed to protecting your personal information and your right to privacy. </p>
-        <p>This Privacy Policy explains how your information is collected, used, and disclosed when you use the Kompari mobile application.</p>
-
-        <h2>1. Information Collection and Use</h2>
-        <p><strong>Kompari does not collect, store, or share any personally identifiable information.</strong> You can use the core features of the App completely anonymously. We do not require you to create an account, nor do we ask for your name, email address, or phone number.</p>
-        <p>All pricing and product comparison data you enter into the App is processed locally on your device and is never transmitted to our servers.</p>
-
-        <h2>2. Third-Party Services (AdMob)</h2>
-        <p>While the App itself does not collect personal data, we use <strong>Google AdMob</strong> to display advertisements that keep the App free to use. </p>
-        <p>Google AdMob is a third-party service that may collect and use certain data automatically to serve personalized or non-personalized ads. The information collected by Google AdMob may include:</p>
-        <ul>
-            <li>Device information (such as device model, operating system, and hardware identifiers)</li>
-            <li>IP addresses</li>
-            <li>Mobile advertising identifiers (such as the Android Advertising ID)</li>
-            <li>App usage and interaction data related to ad performance</li>
-        </ul>
-        <p>To learn more about how Google collects and uses your data, please review the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy & Terms</a>.</p>
-        
-        <h3> European Economic Area (EEA) and UK Users (GDPR)</h3>
-        <p>If you are a resident of the EEA or the UK, you have the right to access, rectify, or erase any personal data collected (such as Advertising IDs). Under the General Data Protection Regulation (GDPR), we rely on your explicit consent to serve personalised advertisements via Google AdMob.</p>
-
-        <p>You will be presented with a consent form via the User Messaging Platform (UMP) upon launching the App. You may withdraw this consent or modify your ad tracking preferences at any time through the App's settings or your device's global privacy settings.</p>
-
-        <h3> California Privacy Rights Act (CCPA / CPRA)</h3>
-        <p>Under the CPRA, California residents have the right to know what personal information is collected, the right to delete that information, and the right to opt-out of the "sale" or "sharing" of personal information.</p>
-
-        <p>Kompari does not sell any kind of personal data. However, our use of Google AdMob to serve personalized ads may constitute "sharing" of technical identifiers (such as your device's Advertising ID) under California law. You may opt-out of this sharing by resetting your Advertising ID or enabling "Opt out of Ads Personalisation" in your Android device settings.</p>
-        <h2>3. Permissions</h2>
-        <p>Kompari requires minimal device permissions to function. We do not request access to your camera, contacts, location, microphone, or storage.</p>
-
-        <h2>4. Children’s Privacy</h2>
-        <p>Our App does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. Because we do not collect personal data directly, no such data is stored by us. However, our third-party advertising partner (Google AdMob) may collect data as outlined in their own privacy policies.</p>
-
-        <h2>5. Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this page. You are advised to review this Privacy Policy periodically for any changes.</p>
-
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions, concerns, or suggestions regarding this Privacy Policy, please feel free to contact us at:</p>
-        <p>📧 <a href="mailto:kompariapp@gmail.com">kompariapp@gmail.com</a></p>
-        <p> Thank you for using Kompari!</p>
-        <div class="footer">
-            &copy; 2026 Kompari. All rights reserved.
-        </div>
+        <footer class="page-footer">
+            <span>&copy; 2026 Kompari. All rights reserved.</span>
+            <a class="back-to-top" href="#top">Back to top ↑</a>
+        </footer>
     </div>
-
 </body>
 </html>
